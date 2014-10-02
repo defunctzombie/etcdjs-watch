@@ -1,4 +1,23 @@
-etcdjs-watch
-============
+# etcdjs-watch
 
-watch etcd keys for changes
+Watch etcd keys for changes. Requires [etcdjs](https://github.com/mafintosh/etcdjs) for the backend.
+
+```js
+var ectd = require('etcd');
+var EtcdWatch = require('etcdjs-watch');
+
+var etcd = Etcd();
+
+var watcher = EtcdWatch(etcd, '/some/key', { options });
+
+watcher.on('set', function(result) {
+});
+
+watcher.on('update', function(result) {
+});
+
+watcher.on('delete', function(result) {
+});
+
+watcher.stop();
+```

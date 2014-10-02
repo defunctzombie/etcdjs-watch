@@ -1,0 +1,30 @@
+{
+  "name": "etcdjs-watch",
+  "version": "0.0.0",
+  "description": "watch etcd keys for changes",
+  "main": "EtcdWatch.js",
+  "scripts": {
+    "test": "mocha --ui qunit --reporter list"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/defunctzombie/etcdjs-watch.git"
+  },
+  "keywords": [
+    "etcd",
+    "watch"
+  ],
+  "author": "Roman Shtylman <shtylman@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/defunctzombie/etcdjs-watch/issues"
+  },
+  "homepage": "https://github.com/defunctzombie/etcdjs-watch",
+  "devDependencies": {
+    "etcdjs": "mafintosh/etcdjs#4d970d",
+    "mocha": "1.21.4"
+  },
+  "dependencies": {
+    "debug": "2.0.0"
+  }
+}
