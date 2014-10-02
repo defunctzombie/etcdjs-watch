@@ -3,7 +3,7 @@
 Watch etcd keys for changes. Requires [etcdjs](https://github.com/mafintosh/etcdjs) for the backend.
 
 ```js
-var ectd = require('etcd');
+var ectd = require('etcdjs');
 var EtcdWatch = require('etcdjs-watch');
 
 var etcd = Etcd();
