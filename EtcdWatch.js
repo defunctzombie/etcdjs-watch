@@ -47,7 +47,10 @@ Watcher.prototype._wait = function() {
 
     debug('waiting %s', self._key);
     self._wait_stop = self._etcd.wait(self._key, self._opt, function(err, result) {
-        if (err) {
+        if (err && err.code === 'ESOCKETTIMEDOUT') {
+            return self._wait();
+        }
+        else if (err) {
             return self.emit('error', err);
         }
 
