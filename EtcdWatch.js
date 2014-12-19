@@ -12,7 +12,6 @@ var Watcher = function(etcd, key, options) {
     self._key = key;
 
     self._stopped = true;
-    self.start();
 };
 
 Watcher.prototype.__proto__ = EventEmitter.prototype;

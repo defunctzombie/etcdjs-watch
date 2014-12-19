@@ -19,5 +19,9 @@ watcher.on('update', function(result) {
 watcher.on('delete', function(result) {
 });
 
-watcher.stop();
+// start watching
+watcher.start();
+
+// sometime later if you want..
+//watcher.stop();
 ```
