@@ -53,6 +53,10 @@ Watcher.prototype._wait = function() {
             return self.emit('error', err);
         }
 
+        if (!result) {
+            return self._wait();
+        }
+
         debug('%s %s', result.action, result.node.key);
         self.emit(result.action, result);
         self._wait();
