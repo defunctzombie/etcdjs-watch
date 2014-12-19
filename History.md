@@ -1,4 +1,4 @@
-# UNRELEASED
+# 1.0.1 (2014-12-19)
 
     * don't fail when there are no results
 
