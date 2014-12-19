@@ -1,4 +1,4 @@
-# UNRELEASED
+# 1.0.0 (2014-12-19)
 
     * don't start watching in constructor automatically
 
