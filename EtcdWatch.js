@@ -6,6 +6,7 @@ var Watcher = function(etcd, key, options) {
         return new Watcher(etcd, key, options);
     }
 
+    debug('created watcher %s', key);
     var self = this;
     self._etcd = etcd;
     self._opt = options || {};
@@ -50,11 +51,18 @@ Watcher.prototype._wait = function() {
             return self._wait();
         }
         else if (err) {
-            return self.emit('error', err);
+            self.emit('error', err);
+            setTimeout(function() {
+                self._wait();
+            }, 2000);
+            return;
         }
 
         if (!result) {
-            return self._wait();
+            setTimeout(function() {
+                self._wait();
+            }, 1000);
+            return;
         }
 
         debug('%s %s', result.action, result.node.key);
