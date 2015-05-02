@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/defunctzombie/etcdjs-watch",
   "devDependencies": {
-    "etcdjs": "1.2.0",
+    "etcdjs": "2.2.0",
     "mocha": "1.21.4"
   },
   "dependencies": {

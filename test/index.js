@@ -4,7 +4,7 @@ var path = require('path');
 var Etcd = require('etcdjs');
 var EtcdWatcher = require('../');
 
-var etcd = Etcd();
+var etcd = Etcd(process.env.ETCD_HOST);
 
 test('should detect the key being set', function(done) {
     var watcher = EtcdWatcher(etcd, 'foo');
@@ -16,6 +16,7 @@ test('should detect the key being set', function(done) {
         done();
     });
 
+    watcher.start();
     etcd.set('foo', 'bar');
 });
 
@@ -29,6 +30,7 @@ test('should detect the key being updated', function(done) {
         done();
     });
 
+    watcher.start();
     etcd.set('foo', 'bar', { prevExist: true });
 });
 
@@ -39,6 +41,7 @@ test('should stop waiting', function(done) {
         assert(false);
     });
 
+    watcher.start();
     watcher.stop();
     etcd.set('foo', 'bar', { prevExist: true }, function() {
         done();
